@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:nftp_app/LoginPage.dart';
+import 'package:nftp_app/ListViewDemoPage.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -16,15 +16,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: LoginPage(),
+      home: ListViewDemoPage(),
     );
   }
 }
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({
-    Key key,
-  }) : super(key: key);
+  int i;
+
+  ProfilePage(int i) {
+    this.i = i;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +39,12 @@ class ProfilePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            "assets/images/shajeel_round.png",
-            width: 300,
+          Hero(
+            tag: "hero_image_" + i.toString(),
+            child: Image.asset(
+              "assets/images/shajeel_round.png",
+              width: 300,
+            ),
           ),
           Container(
             height: 20,
@@ -55,8 +60,8 @@ class ProfilePage extends StatelessWidget {
           Container(
             height: 40,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Wrap(
+            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
                 onPressed: () async {
