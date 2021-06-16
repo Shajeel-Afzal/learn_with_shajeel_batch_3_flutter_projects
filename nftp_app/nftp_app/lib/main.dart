@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:nftp_app/ListViewDemoPage.dart';
+import 'package:nftp_app/GridViewDemo.dart';
+import 'package:nftp_app/LoginPage.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: ListViewDemoPage(),
+      home: LoginPage(),
     );
   }
 }
